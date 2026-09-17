@@ -74,7 +74,10 @@ class GetSpecificOptions
 
         //Get option from runtime memory or try to load
         foreach ($optionIds as $optionId) {
-            if (empty($this->_specificOptions[$storeId][$attributeId][$optionId])) {
+            if (
+                $optionId === null ||
+                !isset($this->_specificOptions[$storeId][$attributeId][$optionId])
+            ) {
                 $optionsIdsToLoad[] = $optionId;
             } else {
                 $options[] = $this->_specificOptions[$storeId][$attributeId][$optionId];
