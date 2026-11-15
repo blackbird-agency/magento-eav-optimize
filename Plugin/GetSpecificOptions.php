@@ -93,7 +93,7 @@ class GetSpecificOptions
                 $loadedOptions = $this->json->unserialize($loadedOptionsCache);
             } else {
                 $loadedOptions = $proceed(
-                    $ids,
+                    $optionsIdsToLoad,
                     false);
 
                 //save result in cache
